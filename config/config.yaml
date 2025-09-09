@@ -1,0 +1,124 @@
+# AI PC Manager Configuration
+# This configuration enables fully local operation
+
+# Application Settings
+app:
+  name: "AI PC Manager"
+  version: "1.0.0"
+  debug: false
+  theme: "dark"  # dark, light, auto
+
+# AI Brain Configuration (Local LLM)
+ai:
+  # Primary local model
+  primary_model: "microsoft/DialoGPT-medium"  # Lightweight local model
+  fallback_model: "distilgpt2"  # Even lighter fallback
+  
+  # Model settings
+  max_length: 256
+  temperature: 0.5
+  top_p: 0.9
+  
+  # Memory settings
+  memory_enabled: true
+  memory_size: 1000
+  memory_persist: true
+  
+  # Local model paths
+  model_cache_dir: "./models"
+  download_models: true
+
+# Speech Recognition (STT) - Local
+stt:
+  engine: "whisper"  # whisper, sphinx
+  whisper_model: "base"  # base, small, medium, large-v3
+  device: "cpu"  # cpu, cuda (if available)
+  language: "en"
+  
+  # Audio settings
+  sample_rate: 16000
+  chunk_size: 1024
+  channels: 1
+  
+  # VAD (Voice Activity Detection)
+  vad_enabled: true
+  silence_threshold: 0.5
+  silence_duration: 2.0
+
+# Text-to-Speech (TTS) - Local
+tts:
+  engine: "pyttsx3"  # pyttsx3, coqui
+  voice_rate: 200
+  voice_volume: 0.8
+  
+  # Coqui TTS settings (if using)
+  coqui_model: "tts_models/en/ljspeech/tacotron2-DDC"
+  coqui_device: "cpu"
+
+# System Control
+system:
+  # Application management
+  auto_discover_apps: true
+  app_database_path: "./data/discovered_apps.json"
+  
+  # Search settings
+  search_depth: 10  # Maximum directory depth for searches
+  search_timeout: 30  # Search timeout in seconds
+  
+  # Automation settings
+  automation_delay: 0.1  # Delay between automation actions
+  screenshot_format: "png"
+  screenshot_quality: 95
+
+# UI Settings
+ui:
+  window_width: 1200
+  window_height: 800
+  theme_colors:
+    primary: "#2E3440"
+    secondary: "#3B4252"
+    accent: "#5E81AC"
+    text: "#ECEFF4"
+    success: "#A3BE8C"
+    warning: "#EBCB8B"
+    error: "#BF616A"
+  
+  # Font settings
+  font_family: "Segoe UI"
+  font_size: 12
+  
+  # Animation settings
+  animations_enabled: true
+  animation_duration: 300
+
+# Logging
+logging:
+  level: "INFO"  # DEBUG, INFO, WARNING, ERROR
+  file_logging: true
+  log_file: "./logs/ai_pc_manager.log"
+  max_log_size: "10MB"
+  backup_count: 5
+
+# Data Storage
+data:
+  base_path: "./data"
+  command_history_file: "command_history.json"
+  learned_patterns_file: "learned_patterns.json"
+  user_preferences_file: "user_preferences.json"
+  theme_preference_file: "theme_preference.json"
+
+logging:
+  level: "DEBUG"
+
+voice:
+  stt:
+    dynamic_energy_threshold: true
+    energy_threshold: 80
+    pause_threshold: 0.6
+    phrase_time_limit: 8
+    sample_rate: 16000
+    vad_enabled: true
+    silence_threshold: 0.001
+    silence_duration: 1.0
+    whisper_model: "tiny"
+    # remove input_device_index

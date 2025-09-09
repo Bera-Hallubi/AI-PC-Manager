@@ -1,0 +1,37 @@
+# Core Dependencies
+PyQt6>=6.5.0
+psutil>=5.9.0
+pyyaml>=6.0
+loguru>=0.7.0
+
+# Enhanced STT (Ears) - Local Speech Recognition
+faster-whisper>=0.9.0
+speechrecognition>=3.10.0
+pyaudio>=0.2.11
+sounddevice>=0.4.6
+soundfile>=0.12.1
+librosa>=0.10.1
+numpy>=1.24.0
+scipy>=1.11.0
+
+# Enhanced TTS (Mouth) - Local Text-to-Speech
+pyttsx3>=2.90
+# TTS>=0.22.0  # Commented out due to Python 3.13 compatibility issues
+requests>=2.31.0
+
+# Enhanced LLM (Brain) - Local AI Models
+torch>=2.0.0
+transformers>=4.35.0
+accelerate>=0.24.0
+huggingface-hub>=0.19.0
+sentence-transformers>=2.2.2
+chromadb>=0.4.15
+
+# Enhanced OS Control (Hands) - Python Automation
+pyautogui>=0.9.54
+keyboard>=0.13.5
+mouse>=0.7.1
+
+# Additional Dependencies
+Pillow>=10.0.0
+pywin32>=306; sys_platform == "win32"

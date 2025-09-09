@@ -1,0 +1,50 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# Build & packaging
+build/
+dist/
+*.egg-info/
+AI_PC_Manager.spec
+
+# Virtual envs
+.venv/
+venv/
+env/
+
+# Editors/OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Logs & temp
+logs/
+*.log
+.cache/
+.ruff_cache/
+data/tmp/
+
+# Models & large assets
+models/
+
+# Distribution/Installers (block binaries; allow scripts)
+AI_PC_Manager_Distribution/
+AI_PC_Manager_Portable/
+installer/**
+!installer/*.nsi
+!installer/*.bat
+!installer/*.py
+!installer/README.md
+!installer/LICENSE.txt
+!installer/config.yaml
+!installer/requirements.txt
+
+# Local config overrides
+config/local.*.yaml
